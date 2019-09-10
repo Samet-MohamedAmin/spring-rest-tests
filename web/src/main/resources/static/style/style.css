@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.bg-light {
+	background-color: #f8f9fa;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.link-unstyled, .link-unstyled:link, .link-unstyled:hover {
+  color: inherit;
+  text-decoration: inherit;
+}

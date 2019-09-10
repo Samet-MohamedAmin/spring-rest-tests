@@ -1,0 +1,18 @@
+<div class="api-links">
+	<a th:replace="fragments/api-panel"></a>
+
+	<div class="my-3 p-3 bg-white rounded shadow-sm">
+		<table class="table">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Path name</th>
+				<th scope="col">Link</th>
+			</tr>
+			<tr th:each="entry, iter : ${apiLinks.entrySet()}">
+				<th th:text=${iter.count} scope="row">0</th>
+				<td th:text="${entry.getKey()}">path name</td>
+				<td><a th:href="@{${entry.getValue()}}" th:text="${entry.getValue()}">/link</a></td>
+			</tr>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+    <table class="table">
+        <tr>
+            <th th:each="key : ${mapAttr.keySet()}"
+                th:text="${key}"
+                scope="col">Field name</th>
+        </tr>
+        <tr th:each="entity : ${entities}">
+            <td th:each="function : ${mapAttr.values()}"
+                th:text="${function.apply(entity)}"
+                scope="row">value</td>
+        </tr>
+    </table>
+</div>

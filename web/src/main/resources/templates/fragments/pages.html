@@ -1,0 +1,18 @@
+<div class="web-links">
+    <a th:replace="fragments/pages-panel"></a>
+
+    <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <table class="table">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Page name</th>
+                <th scope="col">Link</th>
+            </tr>
+            <tr th:each="entry, iter : ${pageLinks.entrySet()}">
+                <th th:text=${iter.count} scope="row">0</th>
+                <td th:text="${entry.getKey()}">page name</td>
+                <td><a th:href="@{${entry.getValue()}}" th:text="${entry.getValue()}">/link</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
