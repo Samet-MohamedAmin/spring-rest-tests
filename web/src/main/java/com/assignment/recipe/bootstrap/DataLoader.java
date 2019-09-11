@@ -62,11 +62,21 @@ public class DataLoader implements CommandLineRunner {
 		return tomatoList;
 	}
 
+	private String prettifyListLog(String name, Set<?> list) {
+
+		String msg = list.stream()
+							.map(Object::toString)
+							.reduce((a, b) -> a+ "\n\t" + b)
+							.orElseGet(() -> "EMPTY LIST");
+
+		return name + "\n\t" + msg;
+	}
+
 	private void loadPotatoData() {
 
 		potatoService.saveAll(generatePotatoList());
 		
-		log.info(potatoService.findAll().toString());
+		log.info(prettifyListLog("potato list:", potatoService.findAll()));
 		log.info("potatos loaded");
 	}
 
@@ -74,7 +84,7 @@ public class DataLoader implements CommandLineRunner {
 
 		tomatoService.saveAll(generateTomatoList());
 		
-		log.info(tomatoService.findAll().toString());
+		log.info(prettifyListLog("tomato list:", tomatoService.findAll()));
 		log.info("tomatos loaded");
 	}
 }
