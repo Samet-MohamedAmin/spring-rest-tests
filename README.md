@@ -14,6 +14,23 @@ The project is composed of 2 modules:
 	</modules>
 ```
 
+## Service Implementation
+Inside `data` module, there are 2 provided implemetations depending on the active profile:
+- map: based on simple map implementation
+- spring data jpa: depending on spring data jpa repositories
+
+The map implementation is provided by default
+``` java
+@Service
+@Profile({"default", "map"})
+public class PotatoMapService implements PotatoService {
+}
+```
+
+The active profile can be changed by adding the following line to `application.properties`:
+`spring.profiles.active=springdatajpa`
+
+
 ## RESTful Controller
 [http://localhost:8080/api](http://localhost:8080/api)
 ![api page](images/api_page.png)
