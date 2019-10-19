@@ -22,6 +22,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
+		<!--
 		<sonar.host.url>http://localhost:9000</sonar.host.url>
 		<sonar.projectName>recipes</sonar.projectName>
 		<sonar.login>admin</sonar.login>
@@ -29,7 +30,7 @@
 		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
 		<sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
 		<sonar.language>java</sonar.language>
-
+		-->
 		<java.version>12</java.version>
 	</properties>
 
@@ -87,11 +88,13 @@
 					<skip>true</skip>
 				</configuration>
 			</plugin>
+			<!--
 			<plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
 				<version>3.6.0</version>
 			</plugin>
+			-->
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
